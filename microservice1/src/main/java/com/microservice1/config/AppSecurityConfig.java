@@ -39,6 +39,7 @@ public class AppSecurityConfig{
 		http.authorizeHttpRequests(req->{
 			req.requestMatchers(publicEndPointUrl)
 			.permitAll()
+			//.requestMatchers("/welcome").hasRole("USER") //Ensure no ROLE_ prefix is used here
 			.anyRequest()
 			.authenticated();
 		})
